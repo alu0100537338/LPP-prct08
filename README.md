@@ -1,17 +1,18 @@
 LPP - Práctica 8
 ================
 
-Enunciado
----------
+Clase Ruby para representar Matrices
+------------------------------------
 
-Considere el desarrollo de una clase Ruby para representar Matrices.
+### Guión ###
 
-  1) Cree una clase para representar Matrices usando desarrollo dirigido por pruebas (Test Driven Development - TDD) 
-     con la herramienta Rspec. 
-     
-  2) Se ha es seguir la metodología de Integración continua (Continuos Integration) usando la herramienta Travis. 
-  
-  3) Además se ha de comprobar el funcionamiento de la aplicación con la herramienta Guard de comprobación continua 
-        (Continuous testing) de manera que permita la ejecución de las pruebas definidas con rspec cuando se modifiquen. 
-        Puede ver un ejemplo en:  git@github.com:coromoto/CT-Point.git
+El guión de esta práctica se encuentra [aquí](http://campusvirtual.ull.es/1314/mod/assign/view.php?id=95620)
+
+Autores
+-------
+
+| ALUMNO | CORREO|
+| -------- | ------- |
+| José Alberto Pérez Melián | alu0100537291[AT]ull.edu.es |
+| Jéssica Alejandra Ramos Villarreal | alu0100537338[AT]ull.edu.es |
 
