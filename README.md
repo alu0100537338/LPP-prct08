@@ -12,6 +12,6 @@ Considere el desarrollo de una clase Ruby para representar Matrices.
   2) Se ha es seguir la metodología de Integración continua (Continuos Integration) usando la herramienta Travis. 
   
   3) Además se ha de comprobar el funcionamiento de la aplicación con la herramienta Guard de comprobación continua 
-     (Continuous testing) de manera que permita la ejecución de las pruebas definidas con rspec cuando se modifiquen. 
-     Puede ver un ejemplo en:  git@github.com:coromoto/CT-Point.git
+      (Continuous testing) de manera que permita la ejecución de las pruebas definidas con rspec cuando se modifiquen. 
+      Puede ver un ejemplo en:  git@github.com:coromoto/CT-Point.git
 
