@@ -217,4 +217,25 @@ describe Matriz do
 			c.cols.should eq(@a.cols)		
 		end
 	end
+	
+	describe "Traspuesta de una matriz" do
+		it "Se puede calcular la traspuesta de una matriz" do
+			c = @a.tras()
+			c.getData(0,0).should eq(1)
+			c.getData(0,1).should eq(4)
+			c.getData(0,2).should eq(7)
+			c.getData(1,0).should eq(2)
+			c.getData(1,1).should eq(5)
+			c.getData(1,2).should eq(8)
+			c.getData(2,0).should eq(3)
+			c.getData(2,1).should eq(6)
+			c.getData(2,2).should eq(9)
+		end
+
+		it "Las filas y las columnas de la matriz traspuesta deben cambiar" do
+			c = @a.tras()
+			c.rows.should eq(@a.cols)
+			c.cols.should eq(@a.rows)
+		end
+	end
 end
