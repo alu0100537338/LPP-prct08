@@ -98,4 +98,15 @@ class Matriz
     end
     c
   end
+
+  # Traspuesta de una matriz
+  def tras()
+    c = Matriz.new(@cols, @rows)
+    c.rows.times do |i|
+      c.cols.times do |j|
+        c.setData(i,j,getData(j,i))
+      end
+    end
+    c
+  end
 end
