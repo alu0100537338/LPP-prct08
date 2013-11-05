@@ -164,6 +164,10 @@ describe Matriz do
 		end
 	end
 	
+	# Agrupacion para comprobar la efectividad del metodo definido
+	# para el operador x, quien realizara la multiplicacion de una matriz
+	# cuadrada por un escalar.
+	
 	describe "Multiplicacion de una matriz por un escalar" do
 		it "Se puede multiplicar una matriz por un escalar" do
 			c = @a.x(2)
@@ -177,11 +181,40 @@ describe Matriz do
 			c.getData(2,1).should eq(16)
 			c.getData(2,2).should eq(18)	
 		end
+		
+		# Comprobamos el tamaño de la matriz resultado tras la operacion.
 
 		it "El tamano de la matriz debe ser el mismo despues de la multiplicacion" do
 			c = @a.x(2)
 			c.rows.should eq(@a.rows)
 			c.cols.should eq(@a.cols)
+		end
+	end
+	
+	# Agrupacion para comprobar la efectividad del metodo definido
+	# para el operador /, quien realizara la division de una matriz
+	# cuadrada por un escalar.
+	
+	describe "Division de una matriz por un escalar" do
+		it "Se puede dividir una matriz por un escalar" do
+			c = @a / 0.5
+			c.getData(0,0).should eq(2)
+			c.getData(0,1).should eq(4)
+			c.getData(0,2).should eq(6)
+			c.getData(1,0).should eq(8)
+			c.getData(1,1).should eq(10)
+			c.getData(1,2).should eq(12)
+			c.getData(2,0).should eq(14)
+			c.getData(2,1).should eq(16)
+			c.getData(2,2).should eq(18)	
+		end
+		
+		# Comprobamos el tamaño de la matriz resultado tras la operacion.
+
+		it "El tamano de la matriz debe ser el mismo despues de la multiplicacion" do
+			c = @a / 0.5
+			c.rows.should eq(@a.rows)
+			c.cols.should eq(@a.cols)		
 		end
 	end
 end
