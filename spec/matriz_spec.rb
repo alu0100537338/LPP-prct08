@@ -1,6 +1,15 @@
+# Fichero para la realizacion de tests de la clase Matriz,
+# cuya hubicacion esta en el fichero matriz.rb en el directorio lib/,
+# el cual importamos para trabajar.
+
 require "./lib/matriz.rb"
 
 describe Matriz do
+
+	# Comenzamos definiendo dos matrices de tamaño 3x3
+	# de las cuales indicamos el valor de cada una de 
+	# sus posiciones para emplearlas enlos tests.
+
 	before :each do
 		@a = matriz.new(3,3)
 		@a.setData(0,0,1)
