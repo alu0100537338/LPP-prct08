@@ -34,4 +34,28 @@ class Matriz
   def setData(i,j,value)
     @data[conver(i,j)] = value
   end
+
+  # Suma de una matriz por otra matriz
+  def +(other)
+    raise ArgumentError, "Matrix size must be equal" unless @rows == other.rows && @cols == other.cols
+    c = Matriz.new(@rows,@cols)
+    @rows.times do |i|
+      @cols.times do |j|
+        c.setData(i,j, getData(i,j) + other.getData(i,j))
+      end
+    end
+    c
+  end
+
+  # Resta de una Matriz por otra Matriz
+  def -(other)
+    raise ArgumentError, "Matrix size must be equal" unless @rows == other.rows && @cols == other.cols
+    c = Matriz.new(@rows,@cols)
+    @rows.times do |i|
+      @cols.times do |j|
+        c.setData(i,j, getData(i,j) - other.getData(i,j))
+      end
+    end
+    c
+  end
 end
