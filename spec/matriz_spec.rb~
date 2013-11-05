@@ -150,6 +150,9 @@ describe Matriz do
 			c.rows.should eq(3)
 			c.cols.should eq(3)
 		end
+		
+		# Comprobamos que salte un error al intentar hacer una operacion de
+		# matrices no cuadradas.
 
 		it "Dos matrices cuyas columnas y filas no coincidan no se pueden multiplicar" do
 			c = Matriz.new(2,2)

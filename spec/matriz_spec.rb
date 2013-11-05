@@ -163,4 +163,25 @@ describe Matriz do
 			expect {@a * c}.to raise_error(ArgumentError)
 		end
 	end
+	
+	describe "Multiplicacion de una matriz por un escalar" do
+		it "Se puede multiplicar una matriz por un escalar" do
+			c = @a.x(2)
+			c.getData(0,0).should eq(2)
+			c.getData(0,1).should eq(4)
+			c.getData(0,2).should eq(6)
+			c.getData(1,0).should eq(8)
+			c.getData(1,1).should eq(10)
+			c.getData(1,2).should eq(12)
+			c.getData(2,0).should eq(14)
+			c.getData(2,1).should eq(16)
+			c.getData(2,2).should eq(18)	
+		end
+
+		it "El tamano de la matriz debe ser el mismo despues de la multiplicacion" do
+			c = @a.x(2)
+			c.rows.should eq(@a.rows)
+			c.cols.should eq(@a.cols)
+		end
+	end
 end
