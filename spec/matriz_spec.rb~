@@ -144,6 +144,7 @@ describe Matriz do
 		end
 
 		it "La matriz resultante de la multiplicacion debe tener el numero de filas de la primera matriz y el numero de columnas de la segunda matriz" do
+			
 		end
 
 		it "Dos matrices cuyas columnas y filas no coincidan no se pueden multiplicar" do

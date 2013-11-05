@@ -11,7 +11,7 @@ describe Matriz do
 	# sus posiciones para emplearlas enlos tests.
 
 	before :each do
-		@a = matriz.new(3,3)
+		@a = Matriz.new(3,3)
 		@a.setData(0,0,1)
 		@a.setData(0,1,2)
 		@a.setData(0,2,3)
