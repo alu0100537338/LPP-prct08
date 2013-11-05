@@ -218,6 +218,10 @@ describe Matriz do
 		end
 	end
 	
+	# Agrupacion para comprobar la efectividad del metodo tras(), 
+	# quien realizara la trasposicion de las filas por las columnas
+	# de una matriz cuadrada.
+	
 	describe "Traspuesta de una matriz" do
 		it "Se puede calcular la traspuesta de una matriz" do
 			c = @a.tras()
@@ -231,6 +235,8 @@ describe Matriz do
 			c.getData(2,1).should eq(6)
 			c.getData(2,2).should eq(9)
 		end
+		
+		# Comprobamos el tamaño de la matriz resultado tras la operacion.
 
 		it "Las filas y las columnas de la matriz traspuesta deben cambiar" do
 			c = @a.tras()
