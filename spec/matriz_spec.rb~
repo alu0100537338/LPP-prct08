@@ -1,9 +1,15 @@
 # Fichero para la realizacion de tests de la clase Matriz,
-# cuya hubicacion 
+# cuya hubicacion esta en el fichero matriz.rb en el directorio lib/,
+# el cual importamos para trabajar.
 
 require "./lib/matriz.rb"
 
 describe Matriz do
+
+	# Comenzamos definiendo dos matrices de tamaño 3x3
+	# de las cuales indicamos el valor de cada una de 
+	# sus posiciones para emplearlas enlos tests.
+
 	before :each do
 		@a = matriz.new(3,3)
 		@a.setData(0,0,1)
@@ -26,5 +32,15 @@ describe Matriz do
 		@b.setData(2,0,3)
 		@b.setData(2,1,2)
 		@b.setData(2,2,1)
+	end
+	
+	describe "Se crea una matriz con 3 filas y 3 columnas" do
+		it "Existe el atributo filas y su valor es 3" do
+			@a.rows.should eq(3)
+		end
+
+		it "Existe el atributo columnas y su valor es 3" do
+			@a.cols.should eq(3)
+		end
 	end
 end

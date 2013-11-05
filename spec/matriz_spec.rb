@@ -33,4 +33,17 @@ describe Matriz do
 		@b.setData(2,1,2)
 		@b.setData(2,2,1)
 	end
+	
+	# Hacemos la comprobacion de que se ha creado la matriz
+	# con un numero especifico de filas y columnas.
+	
+	describe "Se crea una matriz con 3 filas y 3 columnas" do
+		it "Existe el atributo filas y su valor es 3" do
+			@a.rows.should eq(3)
+		end
+
+		it "Existe el atributo columnas y su valor es 3" do
+			@a.cols.should eq(3)
+		end
+	end
 end
