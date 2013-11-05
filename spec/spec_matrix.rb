@@ -6,8 +6,8 @@ describe Matriz do
 		
 	end
 	
-	describe "" do
-		it "" do
+	describe "Pruebas metodos suma, resta y multiplicacion" do
+		it "El metodo suma debe devolver el resultado de sumar dos matrices" do
 
 		end
 	end
