@@ -38,6 +38,7 @@ describe Matriz do
 	# con un numero especifico de filas y columnas.
 	
 	describe "Se crea una matriz con 3 filas y 3 columnas" do
+	
 		it "Existe el atributo filas y su valor es 3" do
 			@a.rows.should eq(3)
 		end
@@ -51,6 +52,7 @@ describe Matriz do
 	# para el operador +, quien realizara la suma de dos matrices cuadradas.
 	
 	describe "Suma de dos matrices" do
+	
 		it "Debe ser posible sumar dos matrices del mismo tamano" do
 			c = @a + @b
 			c.getData(0,0).should eq(10)
@@ -89,6 +91,7 @@ describe Matriz do
 	# para el operador -, quien realizara la resta de dos matrices cuadradas. 
 	
 	describe "Resta de dos matrices" do
+	
 		it "Debe ser posible restar dos matrices del mismo tamano" do
 			c = @a - @b
 			c.getData(0,0).should eq(-8)
@@ -105,6 +108,9 @@ describe Matriz do
 		# Comprobamos el tamaño de la matriz resultado tras la operacion.
 
 		it "La matriz resultante debe tener el mismo tamano" do
+			c = @a - @b
+			c.rows.should eq(3)
+			c.cols.should eq(3)
 		end
 		
 		# Comprobamos que salte un error al intentar hacer una operacion de
@@ -117,6 +123,30 @@ describe Matriz do
 			c.setData(1,0,3)
 			c.setData(1,1,4)
 			expect {@a - c}.to raise_error(ArgumentError)
+		end
+	end
+	
+	# Agrupacion para comprobar la efectividad del metodo definido
+	# para el operador *, quien realizara la multiplicacion de dos matrices cuadradas.
+	
+	describe "Multiplicacion de matrices" do
+		it "Debe ser posible si el numero de columnas de la primera matriz coincide con el numero de filas de la segunda matriz" do
+			c = @a * @b
+			c.getData(0,0).should eq(30)
+			c.getData(0,1).should eq(24)
+			c.getData(0,2).should eq(18)
+			c.getData(1,0).should eq(84)
+			c.getData(1,1).should eq(69)
+			c.getData(1,2).should eq(54)
+			c.getData(2,0).should eq(138)
+			c.getData(2,1).should eq(114)
+			c.getData(2,2).should eq(90)
+		end
+
+		it "La matriz resultante de la multiplicacion debe tener el numero de filas de la primera matriz y el numero de columnas de la segunda matriz" do
+		end
+
+		it "Dos matrices cuyas columnas y filas no coincidan no se pueden multiplicar" do
 		end
 	end
 end
