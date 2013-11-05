@@ -144,10 +144,18 @@ describe Matriz do
 		end
 
 		it "La matriz resultante de la multiplicacion debe tener el numero de filas de la primera matriz y el numero de columnas de la segunda matriz" do
-			
+			c = @a * @b
+			c.rows.should eq(3)
+			c.cols.should eq(3)
 		end
 
 		it "Dos matrices cuyas columnas y filas no coincidan no se pueden multiplicar" do
+			c = Matriz.new(2,2)
+			c.setData(0,0,1)
+			c.setData(0,1,2)
+			c.setData(1,0,3)
+			c.setData(1,1,4)
+			expect {@a * c}.to raise_error(ArgumentError)
 		end
 	end
 end
