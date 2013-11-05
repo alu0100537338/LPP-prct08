@@ -74,4 +74,16 @@ class Matriz
     end
     c
   end
+
+  # Producto de una Matriz por un escalar
+  def x(value)
+    raise ArgumentError, "Must be a number" unless value.class == Fixnum || value.class == Float
+    c = Matriz.new(@rows, @cols)
+    c.rows.times do |i|
+      c.cols.times do |j|
+        c.setData(i,j,getData(i,j) * value)
+      end
+    end
+    c
+  end
 end
