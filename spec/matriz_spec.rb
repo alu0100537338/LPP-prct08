@@ -84,4 +84,42 @@ describe Matriz do
 			expect {@a + c}.to raise_error(ArgumentError)
 		end
 	end
+	
+	# Agrupacion para comprobar la efectividad del metodo definido
+	# para el operador -, quien realizara la resta de dos matrices cuadradas. 
+	
+	describe "Resta de dos matrices" do
+		it "Debe ser posible restar dos matrices del mismo tamano" do
+			c = @a - @b
+			c.getData(0,0).should eq(-8)
+			c.getData(0,1).should eq(-6)
+			c.getData(0,2).should eq(-4)
+			c.getData(1,0).should eq(-2)
+			c.getData(1,1).should eq(0)
+			c.getData(1,2).should eq(2)
+			c.getData(2,0).should eq(4)
+			c.getData(2,1).should eq(6)
+			c.getData(2,2).should eq(8)
+		end
+		
+		# Comprobamos el tamaño de la matriz resultado tras la operacion.
+
+		it "La matriz resultante debe tener el mismo tamano" do
+			c = @a - @b
+			c.rows.should eq(3)
+			c.cols.should eq(3)
+		end
+		
+		# Comprobamos que salte un error al intentar hacer una operacion de
+		# matrices no cuadradas.
+
+		it "La resta de matrices de distinto tamano no es posible" do
+			c = Matriz.new(2,2)
+			c.setData(0,0,1)
+			c.setData(0,1,2)
+			c.setData(1,0,3)
+			c.setData(1,1,4)
+			expect {@a - c}.to raise_error(ArgumentError)
+		end
+	end
 end
