@@ -58,4 +58,20 @@ class Matriz
     end
     c
   end
+
+  # Producto de una Matriz por otra Matriz
+  def *(other)
+    raise ArgumentError, "Columns and Rows must be equal" unless (@cols == other.rows)
+    c = Matriz.new(@rows,other.cols)
+    @rows.times do |i|
+      other.cols.times do |j|
+        ac = 0
+        @cols.times do |k|
+          ac += getData(i,k) * other.getData(k,j)
+        end
+        c.setData(i,j,ac)
+      end
+    end
+    c
+  end
 end
