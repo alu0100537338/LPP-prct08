@@ -46,4 +46,42 @@ describe Matriz do
 			@a.cols.should eq(3)
 		end
 	end
+	
+	# Agrupacion para comprobar la efectividad del metodo definido
+	# para el operador +, quien realizara la suma de dos matrices cuadradas.
+	
+	describe "Suma de dos matrices" do
+		it "Debe ser posible sumar dos matrices del mismo tamano" do
+			c = @a + @b
+			c.getData(0,0).should eq(10)
+			c.getData(0,1).should eq(10)
+			c.getData(0,2).should eq(10)
+			c.getData(1,0).should eq(10)
+			c.getData(1,1).should eq(10)
+			c.getData(1,2).should eq(10)
+			c.getData(2,0).should eq(10)
+			c.getData(2,1).should eq(10)
+			c.getData(2,2).should eq(10)
+		end
+		
+		# Comprobamos el tamaño de la matriz resultado tras la operacion.
+
+		it "La matriz resultante debe tener el mismo tamano" do
+			c = @a + @b
+			c.rows.should eq(3)
+			c.cols.should eq(3)
+		end
+		
+		# Comprobamos que salte un error al intentar hacer una operacion de
+		# matrices no cuadradas.
+
+		it "La suma de matrices de distinto tamano no es posible" do
+			c = Matriz.new(2,2)
+			c.setData(0,0,1)
+			c.setData(0,1,2)
+			c.setData(1,0,3)
+			c.setData(1,1,4)
+			expect {@a + c}.to raise_error(ArgumentError)
+		end
+	end
 end
