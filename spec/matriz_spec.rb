@@ -142,12 +142,17 @@ describe Matriz do
 			c.getData(2,1).should eq(114)
 			c.getData(2,2).should eq(90)
 		end
+		
+		# Comprobamos el tamaño de la matriz resultado tras la operacion.
 
 		it "La matriz resultante de la multiplicacion debe tener el numero de filas de la primera matriz y el numero de columnas de la segunda matriz" do
 			c = @a * @b
 			c.rows.should eq(3)
 			c.cols.should eq(3)
 		end
+		
+		# Comprobamos que salte un error al intentar hacer una operacion de
+		# matrices no cuadradas.
 
 		it "Dos matrices cuyas columnas y filas no coincidan no se pueden multiplicar" do
 			c = Matriz.new(2,2)
