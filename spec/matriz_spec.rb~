@@ -235,6 +235,8 @@ describe Matriz do
 			c.getData(2,1).should eq(6)
 			c.getData(2,2).should eq(9)
 		end
+		
+		# Comprobamos el tamaño de la matriz resultado tras la operacion.
 
 		it "Las filas y las columnas de la matriz traspuesta deben cambiar" do
 			c = @a.tras()
