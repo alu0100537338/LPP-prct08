@@ -1,6 +1,6 @@
 require './lib/matrix.rb'
 
-describe Matrix do
+describe Matriz do
 	#Escribir aquí los test	
 	before :each do
 		
@@ -12,3 +12,4 @@ describe Matrix do
 		end
 	end
 end
+

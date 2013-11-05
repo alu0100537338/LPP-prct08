@@ -1,9 +1,9 @@
 require './lib/matrix.rb'
 
-describe Matrix do
+describe Matriz do
 	#Escribir aquí los test	
 	before :each do
-		@f1 = Matrix.new(2, 4)
+		
 	end
 	
 	describe "" do
@@ -12,3 +12,4 @@ describe Matrix do
 		end
 	end
 end
+
